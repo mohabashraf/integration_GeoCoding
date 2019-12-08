@@ -1,9 +1,13 @@
 package com.demo.integration_geocoding.entites;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class Location {
+@AllArgsConstructor
+@NoArgsConstructor
+public class SiteLocation {
 
     private String id;
     private String name;
