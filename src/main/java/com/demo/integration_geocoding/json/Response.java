@@ -9,4 +9,5 @@ public class Response {
 
     List<Result> results;
     private String status;
+
 }

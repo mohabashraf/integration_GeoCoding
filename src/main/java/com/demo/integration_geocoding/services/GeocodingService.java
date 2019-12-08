@@ -31,8 +31,6 @@ public class GeocodingService {
                 restTemplate.getForObject(
                         format,
                         Response.class);
-        System.out.println(format);
-        System.out.println(response);
         return response;
 
 //        return new SiteLocation(UUID.randomUUID().toString(), address,
