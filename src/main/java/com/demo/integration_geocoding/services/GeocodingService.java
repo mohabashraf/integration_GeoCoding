@@ -25,18 +25,16 @@ public class GeocodingService {
         restTemplate = restTemplateBuilder.build();
     }
 
-    public Response getSiteLocation(String address) {
+    public SiteLocation getSiteLocation(String address) {
         String format = String.format("%s?address=%s&key=%s", BASE_URL, address, API_KEY);
         Response response =
                 restTemplate.getForObject(
                         format,
                         Response.class);
-        return response;
+        return new SiteLocation(UUID.randomUUID().toString(), address,
+                response.getResults().get(0).getGeometry().getLocation().getLongitude(),
+                response.getResults().get(0).getGeometry().getLocation().getLatitude());
 
-//        return new SiteLocation(UUID.randomUUID().toString(), address,
-//                response.getResults().get(0).getGeometry().getLocation().getLongitude(),
-//                response.getResults().get(0).getGeometry().getLocation().getLatitude());
-//
     }
 
 

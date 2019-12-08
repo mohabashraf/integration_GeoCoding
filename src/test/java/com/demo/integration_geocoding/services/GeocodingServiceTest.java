@@ -22,10 +22,10 @@ class GeocodingServiceTest {
 
     @Test
     void getLocationForGoogleHeadQuarter() {
-        Response googleHeadQuarterLocation =
+        SiteLocation googleHeadQuarterLocation =
                 geocodingService.getSiteLocation("1600+Amphitheatre+Parkway");
         logger.info(googleHeadQuarterLocation.toString());
-//        assertEquals(-122.08, googleHeadQuarterLocation.getLongitude());
-//        assertEquals(-122.08, googleHeadQuarterLocation.getLatitude());
+        assertEquals(-122, googleHeadQuarterLocation.getLongitude());
+        assertEquals(37, googleHeadQuarterLocation.getLatitude());
     }
 }
